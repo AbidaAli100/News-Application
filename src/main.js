@@ -9,9 +9,10 @@ fetch('https://newsapi.org/v2/everything?q=Apple&from=2021-08-11&sortBy=populari
         console.log(typeof newsArray);
         document.getElementById("app").innerHTML = (newsArray.map(news =>
             `<div>
-            <div id= "images"><img src="${news.urlToImage}"/></div>
+            <div><img src="${news.urlToImage}"/></div>
             <div> <h2>${news.title} </h2></div>
-            <div> <h3>${news.description}<h3></div>
+            <div> <p>${news.description}</p></div>
+            <div> <h5> Author : ${news.author}</h5></div>
         </div>`
         ).join(''));
     })
